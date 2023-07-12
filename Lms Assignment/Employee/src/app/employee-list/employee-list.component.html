@@ -1,0 +1,33 @@
+<h2>Employee Details</h2>
+<table border="1" [cellPadding]="10" [cellSpacing]="0">
+  <thead>
+    <tr style="background-color: black; color: white">
+      <th>Employee ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Salary</th>
+      <th>DOB</th>
+      <th>Email</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <td>{{ employeeobj.employeeID }}</td>
+
+  <td>
+    <input [(ngModel)]="employeeobj.firstName" [disabled]="!showEdit" />
+  </td>
+
+  <td>
+    <input [(ngModel)]="employeeobj.lastName" [disabled]="!showEdit" />
+  </td>
+
+  <td><input [(ngModel)]="employeeobj.salary" [disabled]="!showEdit" /></td>
+
+  <td><input [(ngModel)]="employeeobj.dob" [disabled]="!showEdit" /></td>
+
+  <td><input [(ngModel)]="employeeobj.email" [disabled]="!showEdit" /></td>
+
+  <button *ngIf="!showEdit" (click)="EditEmp()">Edit</button>
+  <button *ngIf="showEdit" (click)="UpdateEmp()">Update</button>
+</table>

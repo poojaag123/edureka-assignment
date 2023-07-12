@@ -1,0 +1,16 @@
+{
+  "employees": [
+    {
+      "id": 1001,
+      "employee_name": "King Kochar",
+      "employee_salary": 2000,
+      "employee_age": 24
+    },
+    {
+      "id": 1002,
+      "employee_name": "Pooja Agrawal",
+      "employee_salary": 2000,
+      "employee_age": 23
+    }
+  ]
+}
