@@ -1,0 +1,23 @@
+<a routerLink="/user-add" class="btn btn-outline-secondary">Add New User</a>
+<br /><br />
+<h2>{{welcomeMessage}}</h2>
+<br />
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>User Id</th>
+            <th>User Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>
+                <a [routerLink]="['/user-detail', user.id]" class="btn btn-secondary">View Details</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

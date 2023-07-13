@@ -1,0 +1,18 @@
+<form (ngSubmit)="updateEmployee()">
+    <div class="mb-3">
+        <input type="text" class="form-control" name="name" [(ngModel)]="employee.name" placeholder="Employee Name">
+    </div>
+    <div class="mb-3">
+        <input type="text" class="form-control" name="salary" [(ngModel)]="employee.salary"
+            placeholder="Employee Salary">
+    </div>
+    <div class="mb-3">
+        <input type="text" class="form-control" name="designation" [(ngModel)]="employee.designation"
+            placeholder="Employee Designation">
+    </div>
+    <div class="mb-3">
+        <a class="btn btn-secondary" routerLink="/employees">Back to List</a> |
+        <input type="submit" value="Update" class="btn btn-success" /> |
+        <input type="reset" value="Clear" class="btn btn-danger" />
+    </div>
+</form>

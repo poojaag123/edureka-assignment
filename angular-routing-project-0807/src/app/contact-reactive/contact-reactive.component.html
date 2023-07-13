@@ -1,0 +1,58 @@
+<p>contact-reactive works!</p>
+
+
+<form (ngSubmit)="contactSubmit()" [formGroup]="contactForm">
+    <div class="mb-3">
+        <input type="text" class="form-control" name="name" formControlName="name" [(ngModel)]="contact.name"
+            placeholder="Contact Name">
+        <div class="text-danger" *ngIf="(f['name'].touched || submitted)">
+            <div *ngIf="f['name'].errors?.['required']">
+                Name is Required.
+            </div>
+        </div>
+        <div class="text-danger" *ngIf="(f['name'].touched || submitted)">
+            <div *ngIf="f['name'].errors?.['minlength']">
+                Name should be minimum 4 characters long.
+            </div>
+        </div>
+        <div class="text-danger" *ngIf="(f['name'].touched || submitted)">
+            <div *ngIf="f['name'].errors?.['maxlength']">
+                Name should be maximum 10 characters long.
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <input type="text" class="form-control" name="email" formControlName="email" [(ngModel)]="contact.email"
+            placeholder="Contact Email">
+        <div class="text-danger" *ngIf="(f['email'].touched || submitted)">
+            <div *ngIf="f['email'].errors?.['required']">
+                Email is Required
+            </div>
+            <div *ngIf="f['email'].errors?.['email']">
+                Email Id is not valid.
+            </div>
+        </div>
+
+    </div>
+    <div class="mb-3">
+        <input type="submit" value="Add" class="btn btn-success" /> |
+        <input type="reset" value="Clear" class="btn btn-danger" />
+    </div>
+</form>
+
+
+<!-- Reference Code Here -->
+
+<!-- <div class="mb-3">
+    <input type="text" class="form-control" name="name" formControlName="name" [(ngModel)]="contact.name"
+        placeholder="Contact Name">
+    <div class="text-danger" *ngIf="(f['name'].touched || submitted) && f['name'].errors?.['required']">
+        Name is Required
+    </div>
+    <div class="text-danger" *ngIf="(f['name'].touched || submitted) && f['name'].errors?.['minlength']">
+        Name should be minimum 4 characters long.
+    </div>
+    <div class="text-danger" *ngIf="(f['name'].touched || submitted) && f['name'].errors?.['maxlength']">
+        Name should be maximum 10 characters long.
+    </div>
+</div> -->

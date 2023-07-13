@@ -1,0 +1,42 @@
+<h2>Add New User</h2>
+<br />
+<form (ngSubmit)="addUser()" [formGroup]="userForm">
+    <div class="mb-3">
+        <input type="text" class="form-control" formControlName="name" [(ngModel)]="user.name" name="name"
+            placeholder="User Name">
+        <div class="text-danger" *ngIf="(f['name'].touched || submitted) && f['name'].errors?.['required']">
+            Name is Required.
+        </div>
+    </div>
+    <div class="mb-3">
+        <input type="text" class="form-control" name="username" formControlName="username" placeholder="Username">
+        <div class="text-danger" *ngIf="(f['username'].touched || submitted) && f['username'].errors?.['required']">
+            Username is Required.
+        </div>
+    </div>
+    <div class="mb-3">
+        <input type="password" class="form-control" name="password" formControlName="password" placeholder="Password">
+        <div class="text-danger" *ngIf="(f['password'].touched || submitted) && f['password'].errors?.['required']">
+            Password is Required.
+        </div>
+    </div>
+    <div class="mb-3">
+        <input type="text" class="form-control" name="email" formControlName="email" placeholder=" Valid Email">
+        <div class="text-danger" *ngIf="(f['email'].touched || submitted) && f['email'].errors?.['required']">
+            Email is Required.
+        </div>
+    </div>
+    <div class="mb-3">
+        <input type="number" class="form-control" name="contactNumber" formControlName="contactNumber"
+            placeholder="Contact Number">
+        <div class="text-danger"
+            *ngIf="(f['contactNumber'].touched || submitted) && f['contactNumber'].errors?.['required']">
+            Contact Number is Required.
+        </div>
+    </div>
+    <div class="mb-3">
+        <a class="btn btn-secondary" routerLink="/users">Back to List</a> |
+        <input type="submit" value="Add" class="btn btn-success" /> |
+        <input type="reset" value="Clear" class="btn btn-danger" />
+    </div>
+</form>

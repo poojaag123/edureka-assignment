@@ -1,0 +1,35 @@
+<p>contact-reactive works!</p>
+
+<form #contactForm="ngForm" (ngSubmit)="contactSubmit()" novalidate>
+    <div class="mb-3">
+        <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="contact.name"
+            placeholder="Contact Name" required minlength="4" maxlength="10" pattern="^[a-zA-Z]+$">
+        <div class="text-danger" *ngIf="(name.touched || name.dirty)">
+            <div *ngIf="name.errors?.['required']">
+                Name is Required.
+            </div>
+            <div *ngIf="name.errors?.['minlength']">
+                Name should be minimum 4 characters long.
+            </div>
+            <div *ngIf="name.errors?.['pattern']">
+                Only characters are allowed.
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <input type="text" class="form-control" name="email" #email="ngModel" [(ngModel)]="contact.email"
+            placeholder="Contact Email" required email>
+        <div class="text-danger" *ngIf="(email.touched || email.dirty)">
+            <div *ngIf="email.errors?.['required']">
+                Email is Required.
+            </div>
+            <div *ngIf="email.errors?.['email']">
+                Email Id is not valid.
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <input type="submit" value="Add" class="btn btn-success" [disabled]="!contactForm.valid" /> |
+        <input type="reset" value="Clear" class="btn btn-danger" />
+    </div>
+</form>
