@@ -1,1 +1,28 @@
-<p>product works!</p>
+<h3>List Of Product</h3>
+<br />
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <!-- <th>Id</th> -->
+      <th>Name</th>
+      <th>
+        Price
+        <!-- <th>designation</th> -->
+      </th>
+
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pro of product">
+      <!-- <td>{{ pro.id }}</td> -->
+      <td>{{ pro.name }}</td>
+      <td>{{ pro.price }}</td>
+      <!-- <td>{{ emp.designation }}</td> -->
+      <td>
+        <a [routerLink]="['/product-details', pro.id]">View details</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- <app-product-details></app-product-details> -->
