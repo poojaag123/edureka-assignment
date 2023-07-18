@@ -1,0 +1,24 @@
+<table
+  class="table table-stripped"
+  border="1"
+  [cellPadding]="10"
+  [cellSpacing]="0"
+>
+  <thead>
+    <tr style="background-color: black; color: white">
+      <th>Employee Id</th>
+      <th>Name</th>
+      <th>Salary</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.id }}</td>
+      <td>{{ employee.employee_name }}</td>
+      <td>{{ employee.employee_salary }}</td>
+      <td>{{ employee.employee_age }}</td>
+      <!-- <td>{{ employee.age }}</td> -->
+    </tr>
+  </tbody>
+</table>
