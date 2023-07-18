@@ -1,0 +1,50 @@
+<h2>Employee Details</h2>
+<table
+  border="1"
+  [cellPadding]="10"
+  [cellSpacing]="0"
+  class="table table-hover"
+>
+  <thead>
+    <tr style="background-color: black; color: white">
+      <th>Employee ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Salary</th>
+      <th>DOB</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of emplist" appColor>
+      <td>{{ emp.EmployeeID }}</td>
+      <td>{{ emp.FirstName }}</td>
+      <td>{{ emp.LastName }}</td>
+      <td>{{ emp.Salary | currency }}</td>
+      <td>
+        {{ emp.DOB | date : "dd/MM/yyyy" | date : "mediumDate" | uppercase }}
+      </td>
+
+      <td>{{ emp.Email }}</td>
+    </tr>
+  </tbody>
+
+  <!-- <td>{{ employeeobj.employeeID }}</td>
+
+  <td>
+    <input [(ngModel)]="employeeobj.firstName" [disabled]="!showEdit" />
+  </td>
+
+  <td>
+    <input [(ngModel)]="employeeobj.lastName" [disabled]="!showEdit" />
+  </td>
+
+  <td><input [(ngModel)]="employeeobj.salary" [disabled]="!showEdit" /></td>
+
+  <td><input [(ngModel)]="employeeobj.dob" [disabled]="!showEdit" /></td>
+
+  <td><input [(ngModel)]="employeeobj.email" [disabled]="!showEdit" /></td>
+
+  <button *ngIf="!showEdit" (click)="EditEmp()">Edit</button>
+  <button *ngIf="showEdit" (click)="UpdateEmp()">Update</button> -->
+</table>
