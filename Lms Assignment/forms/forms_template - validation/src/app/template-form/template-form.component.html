@@ -1,0 +1,88 @@
+<form #signInForm="ngForm" (ngSubmit)="loginUser(signInForm)">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input
+      type="email"
+      class="form-control"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+      name="emailfield"
+      ngModel
+      email
+      required
+      #emailfield="ngModel"
+    />
+    <span *ngIf="emailfield.touched && !emailfield.valid"
+      >Enter a valid email address</span
+    >
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPhone" class="form-label">Phone Number</label>
+    <input
+      type="text"
+      class="form-control"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+      name="phonefield"
+      ngModel
+      required
+      #phonefield="ngModel"
+      minlength="10"
+      maxlength="20"
+    />
+    <span *ngIf="phonefield.touched && !phonefield.valid"
+      >hone number must be minimum 10 digits and maximum 12 digit</span
+    >
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="exampleInputPassword1"
+      name="password"
+      ngModel
+      required
+      #password="ngModel"
+      minlength="6"
+    />
+    <span *ngIf="password.touched && !password.valid">password enter</span>
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label"
+      >ConfirmPassword</label
+    >
+    <input
+      type="password"
+      class="form-control"
+      id="exampleInputPassword1"
+      name="confirmpassword"
+      ngModel
+      required
+      #confirmpassword="ngModel"
+      minlength="6"
+    />
+    <span *ngIf="confirmpassword.touched && !confirmpassword.valid"
+      >password enter must be same</span
+    >
+  </div>
+
+  <div class="mb-3 form-check">
+    <input
+      type="checkbox"
+      class="form-check-input"
+      id="exampleCheck1"
+      name="termsfield"
+      ngModel
+    />
+    <div *ngIf="signInForm.invalid && signInForm.errors?.['passwordMatch']">
+      Password and Confirm Password must match.
+    </div>
+    <label class="form-check-label" for="exampleCheck1">Agree to terms</label>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!signInForm.valid">
+    Submit
+  </button>
+</form>
