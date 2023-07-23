@@ -1,0 +1,82 @@
+<p>template-form works!</p>
+<!-- <form #form="ngForm" (ngSubmit)="Submit()" novalidate> -->
+<div class="mb-3">
+  <input
+    type="text"
+    class="form-control"
+    name="name"
+    placeholder="Enter your name"
+    required
+  />
+  <!-- <div class="text-danger" ngIf="(name.touched || name.dirty)">
+      <div *ngIf="name.errors?.['required']">Name is Required</div>
+    </div> -->
+</div>
+
+<div class="mb-3">
+  <input
+    type="text"
+    class="form-control"
+    name="Email"
+    placeholder="Enter your Email"
+    required
+  />
+</div>
+<!-- <div class="text-danger" ngIf="(Email.touched || Email.dirty)">
+      <div *ngIf="Email.errors?.['required']">Email is Required</div>
+    </div>
+  </div> -->
+
+<div class="mb-3">
+  <input
+    type="text"
+    class="form-control"
+    name="PhoneNumber"
+    placeholder="Enter your Phone Number"
+    required
+  />
+  <!-- <div
+      class="text-danger"
+      ngIf="(MobileNumber.touched || MobileNumber.dirty)"
+    >
+      <div *ngIf="UserMobileNumber.errors?.['required']">
+        MobileNumber is Required
+      </div>
+    </div> -->
+</div>
+
+<div class="mb-3">
+  <input
+    type="text"
+    class="form-control"
+    name="Password"
+    placeholder="Enter your Password"
+    required
+  />
+  <!-- <div class="text-danger" ngIf="(Password.touched || Password.dirty)">
+      <div *ngIf="Password.errors?.['required']">Password is Required</div>
+    </div> -->
+</div>
+
+<div class="mb-3">
+  <input
+    type="text"
+    class="form-control"
+    name="ConfirmPassword"
+    placeholder="Enter your Confirm Password"
+    required
+  />
+  <!-- <div
+      class="text-danger"
+      ngIf="(ConfirmPassword.touched || ConfirmPassword.dirty)"
+    >
+      <div *ngIf="ConfirmPassword.errors?.['required']">
+        ConfirmPassword is Required
+      </div>
+    </div> -->
+</div>
+
+<div class="mb-3">
+  <input type="submit" value="SignUp" class="btn-btn-success" />
+  <!-- <input type="reset" value="Clear" class="btn-btn-success" /> -->
+</div>
